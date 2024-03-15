@@ -6,10 +6,14 @@ type Input = {
 type Output = {
   id: string;
   nombre: string;
-  edad: string;
+  edad: number;
 };
 
 export default function transformador(input: Input): Output[] {
   // TODO: implement
-  return [];
+  return input.nombres.map((name, index) => ({
+    id: String(index + 1),
+    nombre: name,
+    edad: input.edades[index],
+  }));
 }
