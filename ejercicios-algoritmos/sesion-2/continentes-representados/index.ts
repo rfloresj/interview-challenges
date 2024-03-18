@@ -7,7 +7,15 @@ type Registry = {
   language: string;
 };
 
-export default function continentesRepresentados(array: Registry[]): boolean {
+export default function continentesRepresentados(
+  array: Registry[]
+): boolean | undefined {
   // TODO: implement
-  return false;
+  let everyContinent = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
+  for (let i = 0; i < array.length; i++) {
+    return everyContinent[i].indexOf(array[i].continent) !== -1 &&
+      everyContinent.length === array.length
+      ? true
+      : false;
+  }
 }
