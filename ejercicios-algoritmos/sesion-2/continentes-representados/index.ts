@@ -7,7 +7,20 @@ type Registry = {
   language: string;
 };
 
-export default function continentesRepresentados(
+const CONTINENTS = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
+
+export default function continentesRepresentados(array: Registry[]): boolean {
+  // TODO: implement
+  const continents = new Set([...array.map(({ continent }) => continent)]);
+  const isRepresented = CONTINENTS.every((continent) =>
+    continents.has(continent)
+  );
+
+  return isRepresented;
+}
+
+//My solution
+/* export default function continentesRepresentados(
   array: Registry[]
 ): boolean | undefined {
   // TODO: implement
@@ -18,4 +31,4 @@ export default function continentesRepresentados(
       ? true
       : false;
   }
-}
+} */
