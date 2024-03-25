@@ -10,13 +10,14 @@ type Registry = {
 const CONTINENTS = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 
 export default function continentesRepresentados(array: Registry[]): boolean {
-  // TODO: implement
-  const continents = new Set([...array.map(({ continent }) => continent)]);
-  const isRepresented = CONTINENTS.every((continent) =>
-    continents.has(continent)
-  );
-
-  return isRepresented;
+  let buffer = new Set();
+  for (const { continent } of array) {
+    buffer.add(continent);
+    if (buffer.size === CONTINENTS.length) {
+      return true;
+    }
+  }
+  return false;
 }
 
 //My solution
@@ -31,4 +32,29 @@ export default function continentesRepresentados(array: Registry[]): boolean {
       ? true
       : false;
   }
+} */
+
+//Solution Gonzy
+
+/* export default function continentesRepresentados(array: Registry[]): boolean {
+  // TODO: implement
+  const continents = new Set([...array.map(({ continent }) => continent)]);
+  const isRepresented = CONTINENTS.every((continent) =>
+    continents.has(continent)
+  );
+
+  return isRepresented;
+} */
+
+//3rd Solution
+
+/* export default function continentesRepresentados(array: Registry[]): boolean {
+  let buffer = new Set();
+  for (const { continent } of array) {
+    buffer.add(continent);
+    if (buffer.size === CONTINENTS.length) {
+      return true;
+    }
+  }
+  return false;
 } */
