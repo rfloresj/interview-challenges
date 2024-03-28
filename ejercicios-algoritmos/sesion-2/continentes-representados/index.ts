@@ -9,7 +9,7 @@ type Registry = {
 
 const CONTINENTS = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 
-export default function continentesRepresentados(array: Registry[]): boolean {
+export function continentesRepresentados(array: Registry[]): boolean {
   let buffer = new Set();
   for (const { continent } of array) {
     buffer.add(continent);
@@ -18,6 +18,10 @@ export default function continentesRepresentados(array: Registry[]): boolean {
     }
   }
   return false;
+}
+
+export function developerJavaScriptDeEurope(array: Registry[]): number {
+  return 0;
 }
 
 //My solution
