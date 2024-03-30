@@ -5,6 +5,7 @@ type Registry = {
   continent: string;
   age: number;
   language: string;
+  greet?: string;
 };
 
 const CONTINENTS = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
@@ -25,6 +26,13 @@ export function developerJavaScriptDeEurope(array: Registry[]): number {
     (registry) =>
       registry.continent === "Europe" && registry.language === "JavaScript"
   ).length;
+}
+
+export function greetDeveloper(array: Registry[]): Registry[] {
+  return array.map((registry) => ({
+    ...registry,
+    greet: `Hi ${registry.firstName}, what do you like the most about ${registry.language}?`,
+  }));
 }
 
 //My solution

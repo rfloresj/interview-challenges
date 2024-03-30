@@ -1,6 +1,10 @@
 import { expect, describe, it } from "vitest";
 
-import { continentesRepresentados, developerJavaScriptDeEurope } from ".";
+import {
+  continentesRepresentados,
+  developerJavaScriptDeEurope,
+  greetDeveloper,
+} from ".";
 
 describe("continentesRepresentados", () => {
   it("debería devolver true si todos los continentes están representados", () => {
@@ -51,7 +55,7 @@ describe("continentesRepresentados", () => {
   });
 });
 
-describe.only("developerJavascriptFromEurope", () => {
+describe("developerJavascriptFromEurope", () => {
   it("debería devolver la cantidad de JavaScript developers que viene de Europa", () => {
     expect(
       developerJavaScriptDeEurope([
@@ -110,5 +114,32 @@ describe.only("developerJavascriptFromEurope", () => {
         },
       ])
     ).toBe(1);
+  });
+});
+
+describe("greetDeveloper", () => {
+  it("debería devolver la cantidad de JavaScript developers que viene de Europa", () => {
+    expect(
+      greetDeveloper([
+        {
+          firstName: "Fatima",
+          lastName: "A.",
+          country: "Algeria",
+          continent: "Africa",
+          age: 25,
+          language: "JavaScript",
+        },
+      ])
+    ).toEqual([
+      {
+        firstName: "Fatima",
+        lastName: "A.",
+        country: "Algeria",
+        continent: "Africa",
+        age: 25,
+        language: "JavaScript",
+        greet: `Hi Fatima, what do you like the most about JavaScript?`,
+      },
+    ]);
   });
 });
