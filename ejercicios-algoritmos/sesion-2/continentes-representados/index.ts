@@ -21,7 +21,10 @@ export function continentesRepresentados(array: Registry[]): boolean {
 }
 
 export function developerJavaScriptDeEurope(array: Registry[]): number {
-  return 0;
+  return array.filter(
+    (registry) =>
+      registry.continent === "Europe" && registry.language === "JavaScript"
+  ).length;
 }
 
 //My solution
