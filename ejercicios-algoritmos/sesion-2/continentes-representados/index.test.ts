@@ -4,6 +4,7 @@ import {
   continentesRepresentados,
   developerJavaScriptDeEurope,
   greetDeveloper,
+  continentesPresentes,
 } from ".";
 
 describe("continentesRepresentados", () => {
@@ -141,5 +142,38 @@ describe("greetDeveloper", () => {
         greet: `Hi Fatima, what do you like the most about JavaScript?`,
       },
     ]);
+  });
+});
+
+describe("continentesPresentes", () => {
+  it("debería devolver la cantidad de JavaScript developers que viene de Europa", () => {
+    expect(
+      continentesPresentes([
+        {
+          firstName: "Fatima",
+          lastName: "A.",
+          country: "Algeria",
+          continent: "Africa",
+          age: 25,
+          language: "JavaScript",
+        },
+        {
+          firstName: "Fatima",
+          lastName: "A.",
+          country: "Algeria",
+          continent: "Africa",
+          age: 25,
+          language: "JavaScript",
+        },
+        {
+          firstName: "Fatima",
+          lastName: "A.",
+          country: "Algeria",
+          continent: "Americas",
+          age: 25,
+          language: "JavaScript",
+        },
+      ])
+    ).toMatchObject(["Africa", "Americas"]);
   });
 });

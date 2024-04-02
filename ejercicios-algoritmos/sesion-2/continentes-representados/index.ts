@@ -35,6 +35,16 @@ export function greetDeveloper(array: Registry[]): Registry[] {
   }));
 }
 
+export function continentesPresentes(array: Registry[]): string[] {
+  const continent = new Set<string>();
+
+  for (const registry of array) {
+    continent.add(registry.continent);
+  }
+
+  return Array.from(continent);
+}
+
 //My solution
 /* export default function continentesRepresentados(
   array: Registry[]
