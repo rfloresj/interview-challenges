@@ -171,7 +171,7 @@ describe("continentesPresentes", () => {
           country: "Algeria",
           continent: "Americas",
           age: 25,
-          language: "JavaScript",
+          language: "Ruby",
         },
       ])
     ).toMatchObject(["Africa", "Americas"]);
