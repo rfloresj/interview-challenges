@@ -54,3 +54,15 @@ export default function moverCeros(array: unknown[]): unknown[] {
 //   },[[],[]])
 //   return newArray.flat();
 // }
+// Gonzy solution 3
+// export default function moverCeros(array: unknown[]): unknown[] {
+//   // TODO: implement
+//   const {ceros, sinCeros} = array.reduce<{ceros: unknown[], sinCeros: unknown[]}>(({ceros, sinCeros}, elem) => {
+//     if(elem === 0){
+//       return {ceros: ceros.concat(0), sinCeros};
+//     } else {
+//       return {sinCeros: sinCeros.concat(elem), ceros};
+//     }
+//   },{ceros: [], sinCeros: []})
+//   return [...sinCeros, ...ceros]
+// }
