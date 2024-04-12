@@ -66,3 +66,13 @@ export default function moverCeros(array: unknown[]): unknown[] {
 //   },{ceros: [], sinCeros: []})
 //   return [...sinCeros, ...ceros]
 // }
+// Gonzy solution 3 re-factor
+// export default function moverCeros(array: unknown[]): unknown[] {
+//   // TODO: implement
+//   const {ceros, sinCeros} = array.reduce<{ceros: unknown[], sinCeros: unknown[]}>(({ceros, sinCeros}, elem) =>
+//     elem === 0
+//     ? {ceros: ceros.concat(0), sinCeros}
+//     : {sinCeros: sinCeros.concat(elem), ceros},
+//     {ceros: [], sinCeros: []})
+//   return [...sinCeros, ...ceros]
+// }
