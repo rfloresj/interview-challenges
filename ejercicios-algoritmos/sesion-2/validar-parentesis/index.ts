@@ -12,3 +12,16 @@ export default function validarParéntesis(parentesis: string): boolean {
   }
   return false;
 }
+
+// Gonzy solution
+// export default function validarParéntesis(parentesis: string): boolean {
+//   // TODO: implement
+//   const buffer = parentesis.replace(/\(\)/, "");
+//   if(buffer === ""){
+//     return true;
+//   } else if(buffer === parentesis){
+//     return false;
+//   }
+
+//   return validarParéntesis(buffer);
+// }
