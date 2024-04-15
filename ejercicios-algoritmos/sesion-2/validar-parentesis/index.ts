@@ -25,3 +25,16 @@ export default function validarParéntesis(parentesis: string): boolean {
 
 //   return validarParéntesis(buffer);
 // }
+
+// Gonzy solution re-factor
+// export default function validarParéntesis(parentesis: string): boolean {
+//   const buffer = parentesis.replace(/\(\)/, "");
+
+//   return buffer === ""
+//     ? true
+//     : buffer === parentesis
+//     ? false
+//     : validarParéntesis(buffer);
+// }
+
+// validarParéntesis("(())((()())())"); // true
