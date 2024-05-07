@@ -1,14 +1,10 @@
 import type { Developer } from "./types";
 
 export default function contarLosLenguajes(developers: Developer[]): Record<string, number> {
-  const languages = {};
-  for (const { language } of developers) {
-    if (!languages.hasOwnProperty(language)) {
-      languages[language] = 0;
-    }
-    languages[language]++;
-  }
-  return languages;
+  return developers.reduce(
+    (languages, { language }) => ({ ...languages, [language]: (languages[language] || 0) + 1 }),
+    {}
+  );
 }
 
 // Gonzy 1st solution
