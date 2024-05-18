@@ -1,10 +1,16 @@
 import type { Developer } from "./types";
 
 export default function contarLosLenguajes(developers: Developer[]): Record<string, number> {
-  return developers.reduce(
-    (languages, { language }) => ({ ...languages, [language]: (languages[language] || 0) + 1 }),
-    {}
-  );
+  const languages = {};
+
+  for (const { language } of developers) {
+    if (!languages.hasOwnProperty(language)) {
+      languages[language] = 0;
+    }
+
+    languages[language]++;
+  }
+  return languages;
 }
 
 // Gonzy 1st solution
@@ -37,4 +43,24 @@ export default function contarLosLenguajes(developers: Developer[]): Record<stri
 //     languages.set(language, languages.get(language) + 1);
 //   }
 //   return Object.fromEntries(languages.entries());
+// }
+
+// export default function contarLosLenguajes(developers: Developer[]): Record<string, number> {
+//   const languages = {};
+
+//   for (const {language} of developers){
+//     if(!languages.hasOwnProperty(language)){
+//       languages[language] = 0;
+//     }
+
+//     languages[language]++;
+//   }
+//   return languages;
+// }
+
+// export default function contarLosLenguajes(developers: Developer[]): Record<string, number> {
+//   return developers.reduce(
+//     (languages, { language }) => ({ ...languages, [language]: (languages[language] || 0) + 1 }),
+//     {}
+//   );
 // }
