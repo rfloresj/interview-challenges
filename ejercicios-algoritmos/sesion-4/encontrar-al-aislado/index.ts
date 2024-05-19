@@ -1,4 +1,12 @@
 export default function buscarAislado(numeros: number[]): number {
+  // TODO: implementar
+  const aisladoEsPar = numeros.filter((numero) => numero % 2 === 0).length === 1;
+
+  return numeros.find((numero) => (aisladoEsPar ? numero % 2 === 0 : numero % 2 !== 0)) as number;
+}
+
+// MY SOLUTION
+/* export default function buscarAislado(numeros: number[]): number {
   let sum1 = 0;
   let sum2 = 0;
 
@@ -16,4 +24,4 @@ export default function buscarAislado(numeros: number[]): number {
   }
   console.log(sumEvenNumbers, sumOddNumbers);
   return sum1 > sum2 ? sumOddNumbers : sumEvenNumbers;
-}
+} */
